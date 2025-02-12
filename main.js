@@ -7,15 +7,15 @@ const span = document.querySelector('span');
 button.addEventListener('click', handleClick);
 
 lis.forEach(li=>{
-    li.addEventListener('click',handleNumber);
+    li.addEventListener('click',()=>{
+        li.classList.add('later');
+        let num = li.innerText;
+        span.innerText = num;
+    });
 })
 
 function handleClick(){
     button.style.background = 'var(--White)';
     card.style.display = 'block';
     card1.style.display = 'none';
-}
-function handleNumber(){
-    let num = button.innerText;
-    span.innerText = num;
 }
